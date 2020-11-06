@@ -14,7 +14,7 @@ export class AddProjectModalComponent implements OnInit {
 
   public form: FormGroup;
   @Input() courseId: string;
-  imageSrc : string = '';
+  imageSrc: string = '';
 
   constructor(
     private activeModal: NgbActiveModal,
@@ -48,7 +48,7 @@ export class AddProjectModalComponent implements OnInit {
 
     let form = this.form.controls;
 
-    let project = new Project(form.name.value, this.imageSrc, form.why.value, form.what.value, form.whatWillWeDo.value, form.projectStatus.value, form.courseId.value);
+    let project = new Project(form.name.value, null, form.why.value, form.what.value, form.whatWillWeDo.value, form.projectStatus.value, form.courseId.value);
     this.createProject(project);
   }
 

@@ -16,7 +16,7 @@ export class EditProjectModalComponent implements OnInit {
   public form: FormGroup;
   @Input() project: Project;
   @Input() courseId: string;
-  imageSrc : string = '';
+  imageSrc: string = '';
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -59,11 +59,11 @@ export class EditProjectModalComponent implements OnInit {
 
     let form = this.form.controls;
 
-    this.updateProject(form.name.value, this.imageSrc, form.why.value, form.what.value, form.whatWillWeDo.value, form.projectStatus.value, form.courseId.value);
+    this.updateProject(form.name.value, null, form.why.value, form.what.value, form.whatWillWeDo.value, form.projectStatus.value, form.courseId.value);
     this.editProject(this.project);
   }
 
-  updateProject(name: string, image: string, why: string, what: string, whatWillWeDo: string, projectStatus: ProjectStatus, courseId: string){
+  updateProject(name: string, image: string, why: string, what: string, whatWillWeDo: string, projectStatus: ProjectStatus, courseId: string) {
     this.project.name = name;
     this.project.image = image;
     this.project.why = why;
