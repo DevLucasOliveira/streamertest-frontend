@@ -12,11 +12,11 @@ export class DeleteCourseModalComponent implements OnInit {
 
   @Input() courseId: string;
 
-  constructor(    
+  constructor(
     private activeModal: NgbActiveModal,
     private courseService: CourseService,
     private toastr: ToastrService,
-    ) { }
+  ) { }
 
   ngOnInit() {
   }
@@ -26,7 +26,6 @@ export class DeleteCourseModalComponent implements OnInit {
   }
 
   confirm() {
-    debugger;
     this.courseService.DeleteCourse(this.courseId).subscribe(
       (response) => {
         this.toastr.success('Curso apagado!', 'Sucesso');

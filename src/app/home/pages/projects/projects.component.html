@@ -38,21 +38,19 @@
           <thead class="thead-light">
             <tr>
               <th scope="col">NOME</th>
-              <th scope="col">STATUS</th>
-              <th scope="col">GERENCIAR</th>
+              <th scope="col ta-right" class="table-right-c">GERENCIAR</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let project of projects | commonFilter: name">
-              <td> {{ project.name }} </td>
-              <td> {{ project.projectStatus }} </td>
-              <td>
+              <td class="table-left-c"> {{ project.name }} </td>
+              <td class="table-right-c">
                 <button type="button" class="btn btn-outline-info btn-sm mr-1" (click)="detailsProject(project)"><i
-                    class="fas fa-edit"></i> Detalhes</button>
+                    class="fas fa-cog"></i> Detalhes</button>
                 <button type="button" class="btn btn-outline-secondary btn-sm mr-1" (click)="editProject(project)"><i
                     class="fas fa-edit"></i> Editar</button>
                 <button type="button" class="btn btn-outline-danger btn-sm mr-1" (click)="deleteProject(project.id)"><i
-                    class="fas fa-edit"></i> Excluir</button>
+                    class="fas fa-times"></i> Excluir</button>
               </td>
             </tr>
           </tbody>

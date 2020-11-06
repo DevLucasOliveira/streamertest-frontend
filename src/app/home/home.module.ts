@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipesModule } from '../pipes/pipes.module';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     FormsModule,
     PipesModule,
-    NgbModule
+    NgbModule,
+    ToastrModule.forRoot()
   ],
   providers: [CourseService, ProjectService],
   declarations: [

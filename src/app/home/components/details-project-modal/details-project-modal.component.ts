@@ -25,7 +25,6 @@ export class DetailsProjectModalComponent implements OnInit {
   }
 
   verifyStatus() {
-    console.log(this.project);
     this.status = this.project.projectStatus == 0 ? "Desenvolvimento" : "Publicado";
   }
 

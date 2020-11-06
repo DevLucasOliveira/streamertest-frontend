@@ -2,14 +2,29 @@
     padding: 60px 20px 20px 20px;
     margin: 10px 10px 10px 10px;
   }
-  
+
   .input {
     padding: 60px 20px 20px 20px;
     margin: 10px 10px 10px 40px;
   }
-  
+
   .table {
     padding: 60px 20px 20px 20px;
     margin: 10px 10px 10px 10px;
   }
-  
+
+  .table-right-c{
+    width: 100%;
+    text-align: right;
+    float: right;
+  }
+
+  .table-left-c{
+    width: 50%;
+    text-align: left;
+  }
+
+  .ta-right{
+    text-align: right !important;
+  }
+

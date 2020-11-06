@@ -31,20 +31,19 @@
           <thead class="thead-light">
             <tr>
               <th scope="col">NOME</th>
-              <th scope="col">GERENCIAR</th>
-              <th scope="col">ADICIONAR</th>
+              <th scope="col ta-right" class="table-right-c">GERENCIAR</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let course of courses | commonFilter: name">
-              <td> {{ course.name }} </td>
-              <td>
+              <td class="table-left-c"> {{ course.name }} </td>
+              <td class="table-right-c">
                 <button type="button" class="btn btn-outline-info btn-sm btn-sm mr-1"
                   (click)="manageCourse(course.id)"><i class="fas fa-cog"></i> Projetos</button>
                 <button type="button" class="btn btn-outline-secondary btn-sm mr-1" (click)="editCourse(course)"><i
                     class="fas fa-edit"></i> Editar</button>
                 <button type="button" class="btn btn-outline-danger btn-sm mr-1" (click)="deleteCourse(course.id)"><i
-                    class="fas fa-cog"></i> Excluir</button>
+                    class="fas fa-times"></i> Excluir</button>
               </td>
             </tr>
           </tbody>
