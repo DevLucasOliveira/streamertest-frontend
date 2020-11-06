@@ -22,6 +22,7 @@ export class ProjectsComponent implements OnInit {
   public projects: Array<Project>;
   public course: Course;
   public courseId: string;
+  public status: string;
 
   constructor(
     private modalService: NgbModal,

@@ -10,17 +10,23 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class DetailsProjectModalComponent implements OnInit {
 
   @Input() project: Project;
+  status: string;
 
   constructor(
     public activeModal: NgbActiveModal
   ) { }
 
   ngOnInit() {
-    console.log(this.project.image);
+    this.verifyStatus();
   }
 
   dismiss() {
     this.activeModal.dismiss();
+  }
+
+  verifyStatus() {
+    console.log(this.project);
+    this.status = this.project.projectStatus == 0 ? "Desenvolvimento" : "Publicado";
   }
 
 

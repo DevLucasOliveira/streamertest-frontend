@@ -13,19 +13,24 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="name" class="bold">Nome: {{project.name}}</label>
+    <small><label for="name">Nome</label></small>
+    <input type="text" name="name" class="form-control" value="{{project.name}}" disabled>
   </div>
   <div class="form-group">
-    <label for="whatWillWeDo" class="bold">O que faremos? {{project.whatWillWeDo}}</label>
+    <small><label for="whatWillWeDo">O que faremos? </label></small>
+    <textarea class="form-control" rows="2" name="whatWillWeDo" value="{{project.whatWillWeDo}}" disabled></textarea>
   </div>
   <div class="form-group">
-    <label for="what" class="bold">O que? {{project.what}}</label>
+    <label for="what" class="bold">O que?</label>
+    <textarea class="form-control" rows="2" name="what" value="{{project.what}}" disabled></textarea>
   </div>
   <div class="form-group">
-    <label for="why" class="bold">Por que? {{project.why }}</label>
+    <label for="why" class="bold">Por que?</label>
+    <textarea class="form-control" rows="2" name="why" value="{{project.why}}" disabled></textarea>
   </div>
   <div class="form-group">
-    <label for="projectStatus" class="bold">Status: {{ project.projectStatus }}</label>
+    <label for="projectStatus" class="bold">Status:</label>
+    <input type="text" name="projectStatus" class="form-control" value={{this.status}} disabled>
   </div>
 </div>
 <div class="modal-footer">
