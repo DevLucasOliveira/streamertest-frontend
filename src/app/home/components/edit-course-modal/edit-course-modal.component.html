@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Editar Curso</h4>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form">
+    <div class="form-group">
+      <small><label for="name">Nome</label></small>
+      <input type="text" name="name" class="form-control" formControlName="name">
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="close" aria-label="Close" class="btn btn-dark" (click)="dismiss()">Cancelar</button>
+  <button type="button" class="btn btn-success" (click)="confirm()">Confirmar</button>
+</div>
