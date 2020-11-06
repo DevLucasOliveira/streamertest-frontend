@@ -1,3 +1,53 @@
-<p>
-  add-project-modal works!
-</p>
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Adicionar projeto</h4>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form">
+    <div class="form-group">
+      <small><label for="name">Nome</label></small>
+      <input type="text" name="name" class="form-control" formControlName="name">
+      <span style="color: rgb(201, 72, 72);" class="invalid"
+        *ngIf="form.controls.name.invalid && form.controls.name.touched">Preenchimento
+        obrigatório</span>
+    </div>
+    <div class="form-group">
+      <small><label for="imageSrc">Imagem</label></small>
+      <input (change)="picked($event)" type="file" class="form-control-file">
+    </div>
+    <div class="form-group">
+      <small><label for="whatWillWeDo">O que faremos?</label></small>
+      <input type="text" name="whatWillWeDo" class="form-control" formControlName="whatWillWeDo">
+      <span style="color: rgb(201, 72, 72);" class="invalid"
+        *ngIf="form.controls.whatWillWeDo.invalid && form.controls.whatWillWeDo.touched">Preenchimento
+        obrigatório</span>
+    </div>    
+    <div class="form-group">
+      <small><label for="what">O que?</label></small>
+      <input type="text" name="what" class="form-control" formControlName="what">
+      <span style="color: rgb(201, 72, 72);" class="invalid"
+        *ngIf="form.controls.what.invalid && form.controls.what.touched">Preenchimento
+        obrigatório</span>
+    </div>
+    <div class="form-group">
+      <small><label for="why">Por que?</label></small>
+      <input type="text" name="why" class="form-control" formControlName="why">
+      <span style="color: rgb(201, 72, 72);" class="invalid"
+        *ngIf="form.controls.why.invalid && form.controls.why.touched">Preenchimento
+        obrigatório</span>
+    </div>
+    <div class="form-group">
+      <small><label for="projectStatus">Status do projeto</label></small>
+      <select class="form-control form-control-edit" formControlName="projectStatus" name="projectStatus">
+        <option value=0>Em desenvolvimento</option>
+        <option value=1>Publicado</option>
+      </select>
+      <span style="color: rgb(201, 72, 72);" class="invalid"
+        *ngIf="form.controls.why.invalid && form.controls.why.touched">Preenchimento
+        obrigatório</span>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="close" aria-label="Close" class="btn btn-dark" (click)="dismiss()">Cancelar</button>
+  <button type="button" class="btn btn-success" (click)="confirm()">Confirmar</button>
+</div>

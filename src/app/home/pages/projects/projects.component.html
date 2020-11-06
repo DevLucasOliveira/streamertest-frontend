@@ -1,3 +1,65 @@
-<p>
-  projects works!
-</p>
+<div class="container-fluid h-100">
+  <div class="row title">
+    <div class="col">
+      <h2>{{course?.name}}</h2>
+    </div>
+    <div class="col-2">
+      <small>
+        <h6><a routerLink="/hierachy"><i class="fas fa-long-arrow-alt-left"></i> Voltar</a></h6>
+      </small>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="form-group">
+        <label for="search"></label>
+        <input type="text" name="search" class="form-control" placeholder="Buscar por nome do projeto"
+          [(ngModel)]="name" />
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col">
+      <div class="table">
+        <div class="row">
+          <div class="col">
+            <small>Total de <label style="color: blue;">{{projects?.length}}</label> projetos</small>
+          </div>
+          <div class="col-2">
+            <button type="button" class="btn btn-success btn-sm" (click)="addProject()"><i class="fas fa-plus"></i>
+              Adicionar projeto</button>
+          </div>
+        </div>
+
+        <table class="table table-hover table-sm">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">NOME</th>
+              <th scope="col">STATUS</th>
+              <th scope="col">GERENCIAR</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let project of projects | commonFilter: name">
+              <td> {{ project.name }} </td>
+              <td> {{ project.projectStatus }} </td>
+              <td> <button type="button" class="btn btn-outline-secondary btn-sm mr-1" (click)="editProject(project)"><i
+                    class="fas fa-edit"></i> Editar</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm mr-1"
+                  (click)="deleteProject(project.id)"><i class="fas fa-edit"></i> Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</div>

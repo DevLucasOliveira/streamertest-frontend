@@ -40,13 +40,12 @@ export class AddCourseModalComponent implements OnInit {
       return;
 
     let name = this.form.controls.name.value;
-    this.addCompanyArea(new Course(name));
+    this.createCourse(new Course(name));
   }
 
-  private addCompanyArea(model: Course) {
+  private createCourse(model: Course) {
     this.courseService.CreateCourse(model).subscribe(
       (response) => {
-        console.log(response);
         this.toastr.success(response.message, 'Sucesso');
         this.activeModal.close();
       },

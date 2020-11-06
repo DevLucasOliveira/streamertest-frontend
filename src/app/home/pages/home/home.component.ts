@@ -40,7 +40,6 @@ export class HomeComponent implements OnInit {
   private getCourses(){
     this.courseService.GetAll().subscribe(
       (response) => {
-        console.log(response);
         this.courses = response;
       },
       (err) => {
