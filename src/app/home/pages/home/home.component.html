@@ -38,12 +38,13 @@
           <tbody>
             <tr *ngFor="let course of courses | commonFilter: name">
               <td> {{ course.name }} </td>
-              <td> <button type="button" class="btn btn-outline-secondary btn-sm mr-1"
-                  (click)="editCourse(course)"><i class="fas fa-edit"></i> Editar</button>
-                  <button type="button" class="btn btn-outline-primary btn-sm"
-                  (click)="deleteCourse(course.id)"><i class="fas fa-cog"></i> Excluir</button>
-                <button type="button" class="btn btn-outline-primary btn-sm"
+              <td>
+                <button type="button" class="btn btn-outline-info btn-sm btn-sm mr-1"
                   (click)="manageCourse(course.id)"><i class="fas fa-cog"></i> Projetos</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm mr-1" (click)="editCourse(course)"><i
+                    class="fas fa-edit"></i> Editar</button>
+                <button type="button" class="btn btn-outline-danger btn-sm mr-1" (click)="deleteCourse(course.id)"><i
+                    class="fas fa-cog"></i> Excluir</button>
               </td>
             </tr>
           </tbody>

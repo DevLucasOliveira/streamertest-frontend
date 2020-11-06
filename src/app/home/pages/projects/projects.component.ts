@@ -9,6 +9,7 @@ import { CourseService } from '../../services/course.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddProjectModalComponent } from '../../components/add-project-modal/add-project-modal.component';
 import { EditProjectModalComponent } from '../../components/edit-project-modal/edit-project-modal.component';
+import { DetailsProjectModalComponent } from '../../components/details-project-modal/details-project-modal.component';
 
 @Component({
   selector: 'app-projects',
@@ -65,10 +66,10 @@ export class ProjectsComponent implements OnInit {
   }
 
 
-  public addProject(){
+  public addProject() {
     var modalRef = this.openModal(AddProjectModalComponent);
     modalRef.componentInstance.courseId = this.courseId;
-    
+
     modalRef.result.then(
       (data) => {
         this.getProjectsOfCourse();
@@ -78,7 +79,7 @@ export class ProjectsComponent implements OnInit {
       });
   }
 
-  public editProject(project: Project){
+  public editProject(project: Project) {
     var modalRef = this.openModal(EditProjectModalComponent);
     modalRef.componentInstance.project = project;
     modalRef.componentInstance.courseId = this.courseId;
@@ -92,7 +93,7 @@ export class ProjectsComponent implements OnInit {
       });
   }
 
-  public deleteProject(id: string){
+  public deleteProject(id: string) {
     var modalRef = this.openModal(DeleteProjectModalComponent);
     modalRef.componentInstance.projectId = id;
 
@@ -105,6 +106,18 @@ export class ProjectsComponent implements OnInit {
       });
   }
 
+  public detailsProject(project: Project) {
+    var modalRef = this.openModal(DetailsProjectModalComponent);
+    modalRef.componentInstance.project = project;
+
+    modalRef.result.then(
+      (data) => {
+        this.getProjectsOfCourse();
+      },
+      (err) => {
+        return;
+      });
+  }
 
 
 

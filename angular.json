@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "backoffice"
+    }
+  },
+  "defaultProject": "backoffice",
+  "cli": {
+    "analytics": "bd2e8024-6178-45eb-9739-4e4779f9e0c9"
+  }
 }

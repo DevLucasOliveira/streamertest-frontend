@@ -1,3 +1,4 @@
+import { DetailsProjectModalComponent } from './components/details-project-modal/details-project-modal.component';
 import { DeleteCourseModalComponent } from './components/delete-course-modal/delete-course-modal.component';
 import { DeleteProjectModalComponent } from './components/delete-project-modal/delete-project-modal.component';
 import { EditProjectModalComponent } from './components/edit-project-modal/edit-project-modal.component';
@@ -27,13 +28,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   providers: [CourseService, ProjectService],
   declarations: [
-    HomeComponent, 
-    ProjectsComponent, 
-    AddCourseModalComponent, 
-    EditCourseModalComponent, 
-    AddProjectModalComponent, 
+    HomeComponent,
+    ProjectsComponent,
+    AddCourseModalComponent,
+    EditCourseModalComponent,
+    AddProjectModalComponent,
     EditProjectModalComponent,
     DeleteProjectModalComponent,
-    DeleteCourseModalComponent]
+    DeleteCourseModalComponent,
+    DetailsProjectModalComponent]
 })
 export class HomeModule { }

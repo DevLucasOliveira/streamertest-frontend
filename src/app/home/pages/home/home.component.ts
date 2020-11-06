@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  private getCourses(){
+  private getCourses() {
     this.courseService.GetAll().subscribe(
       (response) => {
         this.courses = response;
@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  public addCourse(){
+  public addCourse() {
     var modalRef = this.openModal(AddCourseModalComponent);
 
     modalRef.result.then(
@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  public editCourse(course: Course){
+  public editCourse(course: Course) {
     var modalRef = this.openModal(EditCourseModalComponent);
     modalRef.componentInstance.course = course;
 
@@ -75,11 +75,11 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  public manageCourse(id: string){
+  public manageCourse(id: string) {
     this.router.navigate([`curso/${id}`]);
   }
 
-  public deleteCourse(id: string){
+  public deleteCourse(id: string) {
     var modalRef = this.openModal(DeleteCourseModalComponent);
     modalRef.componentInstance.courseId = id;
 

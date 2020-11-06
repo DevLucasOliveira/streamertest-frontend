@@ -46,10 +46,13 @@
             <tr *ngFor="let project of projects | commonFilter: name">
               <td> {{ project.name }} </td>
               <td> {{ project.projectStatus }} </td>
-              <td> <button type="button" class="btn btn-outline-secondary btn-sm mr-1" (click)="editProject(project)"><i
+              <td>
+                <button type="button" class="btn btn-outline-info btn-sm mr-1" (click)="detailsProject(project)"><i
+                    class="fas fa-edit"></i> Detalhes</button>
+                <button type="button" class="btn btn-outline-secondary btn-sm mr-1" (click)="editProject(project)"><i
                     class="fas fa-edit"></i> Editar</button>
-                <button type="button" class="btn btn-outline-secondary btn-sm mr-1"
-                  (click)="deleteProject(project.id)"><i class="fas fa-edit"></i> Excluir</button>
+                <button type="button" class="btn btn-outline-danger btn-sm mr-1" (click)="deleteProject(project.id)"><i
+                    class="fas fa-edit"></i> Excluir</button>
               </td>
             </tr>
           </tbody>
