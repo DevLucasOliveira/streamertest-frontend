@@ -1,3 +1,4 @@
+import { DeleteCourseModalComponent } from './../../components/delete-course-modal/delete-course-modal.component';
 import { AddCourseModalComponent } from './../../components/add-course-modal/add-course-modal.component';
 import { Course } from './../../models/course';
 import { CourseService } from '../../services/course.service';
@@ -76,6 +77,19 @@ export class HomeComponent implements OnInit {
 
   public manageCourse(id: string){
     this.router.navigate([`curso/${id}`]);
+  }
+
+  public deleteCourse(id: string){
+    var modalRef = this.openModal(DeleteCourseModalComponent);
+    modalRef.componentInstance.courseId = id;
+
+    modalRef.result.then(
+      (data) => {
+        this.getCourses();
+      },
+      (err) => {
+        return;
+      });
   }
 
 }

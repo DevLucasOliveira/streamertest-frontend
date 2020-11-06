@@ -1,3 +1,4 @@
+import { DeleteProjectModalComponent } from './../../components/delete-project-modal/delete-project-modal.component';
 import { Course } from './../../models/course';
 import { Project } from './../../models/project';
 import { Component, OnInit } from '@angular/core';
@@ -92,7 +93,16 @@ export class ProjectsComponent implements OnInit {
   }
 
   public deleteProject(id: string){
-    
+    var modalRef = this.openModal(DeleteProjectModalComponent);
+    modalRef.componentInstance.projectId = id;
+
+    modalRef.result.then(
+      (data) => {
+        this.getProjectsOfCourse();
+      },
+      (err) => {
+        return;
+      });
   }
 
 

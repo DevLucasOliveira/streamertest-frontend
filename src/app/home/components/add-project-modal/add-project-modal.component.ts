@@ -17,7 +17,7 @@ export class AddProjectModalComponent implements OnInit {
   imageSrc : string = '';
 
   constructor(
-    public activeModal: NgbActiveModal,
+    private activeModal: NgbActiveModal,
     private formBuilder: FormBuilder,
     private projectService: ProjectService,
     private toastr: ToastrService,

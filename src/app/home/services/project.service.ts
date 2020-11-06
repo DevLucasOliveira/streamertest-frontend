@@ -22,7 +22,7 @@ export class ProjectService {
   }
 
   public DeleteProject(projectId: string): Observable<any> {
-    return this.http.put(`projects/${projectId}`);
+    return this.http.delete(`projects/${projectId}`);
   }
 
 

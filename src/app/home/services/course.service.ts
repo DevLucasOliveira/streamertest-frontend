@@ -26,7 +26,7 @@ export class CourseService {
   }
 
   public DeleteCourse(courseId: string): Observable<any> {
-    return this.http.put(`courses/${courseId}`);
+    return this.http.delete(`courses/${courseId}`);
   }
 
 

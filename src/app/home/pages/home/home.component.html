@@ -32,6 +32,7 @@
             <tr>
               <th scope="col">NOME</th>
               <th scope="col">GERENCIAR</th>
+              <th scope="col">ADICIONAR</th>
             </tr>
           </thead>
           <tbody>
@@ -39,6 +40,8 @@
               <td> {{ course.name }} </td>
               <td> <button type="button" class="btn btn-outline-secondary btn-sm mr-1"
                   (click)="editCourse(course)"><i class="fas fa-edit"></i> Editar</button>
+                  <button type="button" class="btn btn-outline-primary btn-sm"
+                  (click)="deleteCourse(course.id)"><i class="fas fa-cog"></i> Excluir</button>
                 <button type="button" class="btn btn-outline-primary btn-sm"
                   (click)="manageCourse(course.id)"><i class="fas fa-cog"></i> Projetos</button>
               </td>

@@ -52,7 +52,7 @@ export class HttpService {
     return this.http.patch(`${environment.apiUrl}${path}`, body, options);
   }
 
-  delete(url: string, body: any) {
+  delete(url: string) {
     return this.http.delete(`${environment.apiUrl}${url}`);
   }
 
